@@ -1,0 +1,40 @@
+This is the solution by group 26 for dining philosophers problem. This code is both Starvation and Deadlock free.
+
+DEADLOCK FREE:Used mutex lock and condition variables.
+
+STARVATION FREE:Calculated max starvation time and current philosopher becomes generous if he himself is not starving and one of his neighbour is starving, so he doesn't picks the sticks and gives his neighbour a chance to eat.
+		see philosophers_loop() in diningphilos.c for more info
+
+EXPECTED OUTPUT:
+
+philospher 1 loop started
+philospher 4 loop started
+philospher 3 loop started
+philospher 2 loop started
+philospher 0 loop started
+# EATING COUNT= 1 
+ Philosopher 1 is thinking and has eaten 0 times. 
+ Philosopher 2 is eating and has eaten 1 times. 
+ Philosopher 3 is thinking and has eaten 0 times. 
+ Philosopher 4 is thinking and has eaten 0 times. 
+ Philosopher 5 is thinking and has eaten 0 times. 
+.......
+
+# EATING COUNT= 2 
+ Philosopher 1 has been waiting for 0.003178 and calling pick_up() and has eaten 0 times. 
+ Philosopher 2 is eating and has eaten 1 times. 
+ Philosopher 3 is thinking and has eaten 0 times. 
+ Philosopher 4 is eating and has eaten 1 times. 
+ Philosopher 5 is thinking and has eaten 0 times. 
+.......
+
+ERROR HANDLING:
+1) thread creation error handled
+2) condition variable initialization error handled
+3) prints "Something wrong ..." when two neighbours are simultaneously eating.
+
+CODING STYLE:
+1) All codes are properly indentated and properly commented.
+2) Use of #define so that changes can be made easily.
+3) All shared variables declared in a sepearate file.
+4) README included.
